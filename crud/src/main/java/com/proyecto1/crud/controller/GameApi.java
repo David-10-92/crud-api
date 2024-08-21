@@ -1,7 +1,7 @@
 package com.proyecto1.crud.controller;
 
 import com.proyecto1.crud.commons.entities.GameModel;
-import com.proyecto1.crud.constants.ApiPathConstants;
+import com.proyecto1.crud.commons.constants.ApiPathConstants;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +13,9 @@ public interface GameApi {
     @GetMapping(value = "/{gameId}")
     ResponseEntity<GameModel> getGame(@PathVariable Long gameId);
     @DeleteMapping(value = "/{gameId}")
-    ResponseEntity<GameModel> deteleGame(@PathVariable long gameId);
+    ResponseEntity<Void> deteleGame(@PathVariable long gameId);
     @PutMapping(value = "/{gameId}")
-    ResponseEntity<GameModel> updateGame(@RequestBody GameModel gameRequest,@PathVariable Long gameId);
+    ResponseEntity<Void> updateGame(@RequestBody GameModel gameRequest,@PathVariable Long gameId);
 
 
 }
