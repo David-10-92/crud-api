@@ -53,9 +53,8 @@ public class GameServiceImpl implements GameService {
     }
 
     private GameModel updateFieldsGame(GameModel existingGame, GameModel gameUpdateRequest) {
-        return GameModel.builder()
-                .name(gameUpdateRequest.getName())
-                .build();
+        existingGame.setName(gameUpdateRequest.getName());
+        return existingGame;
     }
 
     private GameModel mapToEntity(GameModel gameRequest) {
